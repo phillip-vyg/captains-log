@@ -32,6 +32,19 @@ class SmoothScroll {
       smoothWheel: true, // Enables smooth scrolling for mouse wheel events
     });
 
+    this.lenis.on("scroll", (e: { actualScroll: number }) => {
+      // When near the top, shrink the container back down
+      if (e.actualScroll <= 50) {
+        this.scaleDown();
+        return;
+      }
+      // Or if it's already active, do nothing
+      else if (this.el.classList.contains("screen--active")) return;
+
+      // scale up the container
+      this.scaleUp();
+    });
+
     // Keeps Lenis ticking over
     requestAnimationFrame((t) => this.raf(t));
 
@@ -50,11 +63,54 @@ class SmoothScroll {
     // scale down the container and stop scrolling when hover off the section
     this.el.addEventListener("mouseleave", () => {
       this.lenis.stop();
+      this.scaleDown();
     });
 
     // restart scrolling when hover over the section
     this.el.addEventListener("mouseenter", () => {
       this.lenis.start();
+    });
+  }
+
+  // Increases the width of the active section
+  scaleUp() {
+    // Utility class that adds in the black overlay
+    BODY.classList.add("lenis-scrolling");
+    this.el.classList.add("screen--active");
+
+    // Make sure it sits over the opposing section
+    gsap.set(this.el, { zIndex: 2 });
+    // Scale the width to 2/3rd
+    gsap.to(this.el, {
+      duration: 1,
+      ease: "power3.out",
+      width: window.innerWidth * 0.66,
+      onComplete: () => {
+        // console.log(ScrollTrigger);
+        // console.log("go");
+        // // this.lenis.resize();
+        // setTimeout(() => {
+        //   console.log("go 2");
+        //   console.log(ScrollTrigger);
+        // ScrollTrigger.refresh(true);
+        // }, 1000);
+      },
+    });
+  }
+
+  // Restores the section to original 50% width
+  scaleDown() {
+    if (!this.el.classList.contains("screen--active")) return;
+    BODY.classList.remove("lenis-scrolling");
+    gsap.to(this.el, {
+      duration: 1,
+      ease: "power3.out",
+      width: window.innerWidth * 0.5,
+      onComplete: () => {
+        ScrollTrigger.refresh(true);
+        this.el.classList.remove("screen--active");
+        gsap.set(this.el, { zIndex: 1 });
+      },
     });
   }
 

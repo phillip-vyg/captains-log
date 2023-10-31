@@ -19,6 +19,31 @@ main {
 
 body {
   color: theme("colors.mine-shaft.100");
+
+  &:before {
+    display: block;
+    content: "";
+    width: 100vw;
+    height: 100dvh;
+    background-color: theme("colors.mine-shaft.50");
+    opacity: 0;
+    pointer-events: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    transition: opacity 300ms ease-out;
+
+    @include blur();
+  }
+
+  &.lenis-scrolling {
+    &:before {
+      opacity: 1;
+    }
+  }
 }
 
 h1 {
