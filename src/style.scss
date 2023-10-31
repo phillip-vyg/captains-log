@@ -85,7 +85,7 @@ header {
   @include blur();
 
   &__input {
-    &:checked ~ .mobile-toggle__radio:after {
+    &:checked + .mobile-toggle__radio:after {
       transform: translateX(100%);
     }
   }
