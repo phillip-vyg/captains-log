@@ -1,7 +1,6 @@
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BODY } from "./globals";
 
 gsap.registerPlugin(ScrollTrigger);
 
