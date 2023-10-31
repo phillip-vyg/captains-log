@@ -1,0 +1,26 @@
+{
+  "name": "captains-log",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@studio-freight/lenis": "^1.0.27",
+    "@types/gsap": "^3.0.0",
+    "@types/imagesloaded": "^4.1.4",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "sass": "^1.69.5",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "gsap": "^3.12.2",
+    "imagesloaded": "^5.0.0"
+  }
+}

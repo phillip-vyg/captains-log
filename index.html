@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Captain's Log</title>
+  </head>
+
+  <body>
+    <main id="app">
+      <header
+        class="w-full px-10 py-5 bg-white/70 flex justify-between align-middle"
+      >
+        <a href="#">
+          <svg viewBox="0 0 211 59" fill="none">
+            <path
+              class="fill-mine-shaft-100"
+              d="M177.178 12.886v-.654h-5.123v4.97h-1.43c-2.287-3.684-7.037-5.755-12.864-5.755-8.863 0-14.668 4.775-14.668 11.795 0 3.227 1.341 6.018 3.562 7.98-2.704 1.309-4.222 3.271-4.222 5.713 0 2.747 1.562 4.993 4.42 5.909-3.122 1.308-4.948 3.88-4.948 7.151 0 5.604 5.828 9.005 15.944 9.005h2.463c10.225 0 16.009-3.641 16.009-9.768 0-5.734-5.388-9.68-14.36-9.68h-7.587c-4.75 0-6.487-1.614-6.487-3.707s1.143-2.987 1.143-2.987c2.353 1.373 5.234 1.897 8.775 1.897 9.038 0 14.645-4.58 14.645-11.513 0-1.199-.153-2.136-.461-3.227 3.078-.828 5.189-3.553 5.189-7.13zm-26.146 31.157h9.807c6.246 0 9.5 1.853 9.5 5.233 0 3.357-3.54 5.254-11.017 5.254-7.851 0-11.611-2.158-11.611-5.669 0-2.223 1.034-3.815 3.321-4.818zm6.773-13.78c-5.366 0-8.929-2.856-8.929-7.086 0-4.295 3.541-7.26 8.863-7.26 5.255 0 8.796 2.965 8.796 7.26.022 4.295-3.475 7.086-8.73 7.086zM211 28.192c0-9.834-6.927-16.745-16.779-16.745s-16.955 7.457-16.955 18.184c0 11.73 6.73 18.838 17.329 18.838 8.818 0 14.624-4.622 15.943-12.014h-5.981c-1.1 4.383-4.816 7.26-9.874 7.26-6.773 0-11.281-5.123-11.281-13.256h27.444c-.022-.021.154-1.199.154-2.267zm-27.18-1.766c.527-6.149 5.299-10.095 10.621-10.095s9.94 3.663 10.468 10.095H183.82zm-61.75-14.979c-7.873 0-13.458 4.142-14.404 11.032h5.762c.901-4.164 4.354-6.235 8.576-6.235 5.146 0 8.686 2.9 8.928 8.634v1.09l-11.215.916c-8.598.654-13.854 4.905-13.854 11.272s4.97 10.313 12.6 10.313c6.422 0 10.798-2.726 12.667-7.85v7.065h5.696V25.336c0-8.765-5.806-13.89-14.756-13.89zm8.862 21.236c0 6.629-5.058 11.098-11.655 11.098-4.706 0-7.477-2.05-7.477-5.647 0-3.946 2.925-6.432 8.709-6.846l10.445-.85v2.245h-.022zM37.648 0L23.046 39.29H20.76L6.157 0H0l17.746 47.684h8.313L43.805 0h-6.157zm18.846 11.447c-10.028 0-17.373 7.696-17.373 18.533 0 10.858 7.345 18.467 17.373 18.467 9.984 0 17.329-7.631 17.329-18.467 0-10.858-7.345-18.533-17.33-18.533zm0 32.116c-6.29 0-11.37-5.298-11.37-13.583 0-8.286 5.103-13.693 11.37-13.693 6.267 0 11.325 5.407 11.325 13.693 0 8.285-5.036 13.583-11.325 13.583zM99.925 12.21L91.46 39.268h-1.385L79.782 12.21h-6.091l12.886 33.38h2.969l-1.122 3.228c-1.451 4.12-3.1 5.21-6.333 5.21-1.737 0-3.606-.5-4.618-1.111v5.015C78.551 58.52 80.969 59 83.124 59c5.366 0 8.753-2.682 10.6-8.634l12.095-38.156h-5.894z"
+            ></path>
+          </svg>
+        </a>
+        <p>Captain's Log</p>
+      </header>
+
+      <!-- 
+        Left Screen
+       -->
+      <section
+        class="screen screen__left sm:w-1/2 max-sm:w-full h-full absolute left-0 top-0 overflow-auto sm:border-r border-mine-shaft"
+      >
+        <div
+          id="content-work"
+          class="screen__content pt-20 px-5 relative bg-white"
+        >
+          <h1>#Work</h1>
+          <div class="cards">
+            <article class="card" style="--r: 1; --c: 1; --s: 4">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 2; --c: 5; --s: 3">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 3; --c: 3; --s: 2">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 4; --c: 1; --s: 2">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 5; --c: 3; --s: 5">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 6; --c: 2">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 7; --c: 3; --s: 3">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 8; --c: 6; --s: 2">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 9; --c: 1; --s: 5">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 10; --c: 6; --s: 3">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 11; --c: 4; --s: 2">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 12; --c: 1; --s: 3">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+        Right Screen
+       -->
+      <section
+        class="screen screen__right sm:w-1/2 max-sm:w-full h-full absolute right-0 top-0 overflow-auto sm:border-l border-mine-shaft max-sm:translate-x-full"
+      >
+        <div
+          id="content-life"
+          class="screen__content pt-20 px-5 relative bg-white"
+        >
+          <h1>#Life</h1>
+          <div class="cards">
+            <article class="card" style="--r: 1; --c: 1; --s: 4">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 2; --c: 5; --s: 3">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 3; --c: 3; --s: 2">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 4; --c: 1; --s: 2">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 5; --c: 3; --s: 5">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 6; --c: 2">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 7; --c: 3; --s: 3">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 8; --c: 6; --s: 2">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 9; --c: 1; --s: 5">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 10; --c: 6; --s: 3">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 11; --c: 4; --s: 2">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+            <article class="card" style="--r: 12; --c: 1; --s: 3">
+              <p class="card__title">Name of the card</p>
+              <figure class="card__media">
+                <img
+                  class="card__media--inner"
+                  src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                  alt=""
+                />
+              </figure>
+              <figcaption class="card__caption">
+                <p>Lorem ipsum</p>
+              </figcaption>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <label
+        class="sm:hidden mobile-toggle flex items-center absolute bottom-5 left-1/2 -translate-x-1/2 p-4 border border-mine-shaft-50 rounded-full bg-white/50 cursor-pointer"
+      >
+        <span class="mobile-toggle__label mr-3 text-sm font-medium">#Work</span>
+        <div class="relative">
+          <input
+            type="checkbox"
+            value=""
+            class="mobile-toggle__input sr-only"
+          />
+          <div class="mobile-toggle__radio"></div>
+        </div>
+        <span class="mobile-toggle__label ml-3 text-sm font-medium">#Life</span>
+      </label>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
