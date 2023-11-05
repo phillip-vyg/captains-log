@@ -24,6 +24,32 @@ export default {
           70: "rgba(195, 255, 190, 0.7)",
         },
       },
+      width: {
+        50: "50px",
+        60: "60px",
+        "60p": "60%",
+        600: "600px",
+      },
+      height: {
+        50: "50px",
+        60: "60px",
+        "60p": "60%",
+      },
+      maxWidth: {
+        90: "90vw",
+      },
+      backdropBlur: {
+        15: "15px",
+      },
+      backdropSaturate: {
+        160: "160%",
+      },
+      backdropContrast: {
+        45: "45%",
+      },
+      backdropBrightness: {
+        140: "140%",
+      },
     },
   },
   plugins: [],

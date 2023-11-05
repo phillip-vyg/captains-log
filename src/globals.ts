@@ -11,3 +11,6 @@ export const SCREEN_RIGHT = document.querySelector(
 export const SCREENS = document.querySelectorAll(
   ".screen"
 ) as unknown as HTMLElement;
+export const CARDS = document.querySelectorAll(
+  ".card"
+) as unknown as Array<HTMLElement>;

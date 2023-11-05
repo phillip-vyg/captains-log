@@ -22,7 +22,11 @@ body {
 }
 
 h1 {
-  font-size: clamp(3rem, 10vw, 20rem);
+  font-size: clamp(3rem, 7vw, 15rem);
+
+  span {
+    font-size: 0.7em;
+  }
 }
 
 header {
@@ -61,6 +65,12 @@ header {
   grid-column: var(--c) / span var(--s);
   grid-row: var(--r);
   overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    // TODO;
+    // Add a hover state
+  }
 }
 
 .card__media {
@@ -114,6 +124,29 @@ header {
 
       transition: transform 300ms ease-out;
     }
+  }
+}
+
+// Gallery
+.fullscreen {
+  background-color: transparent;
+  transition: background 300ms ease-out;
+
+  &__close {
+    opacity: 0;
+  }
+
+  &--active {
+    background-color: theme("colors.cararra.DEFAULT");
+  }
+}
+
+// Gallery
+.gallery {
+  &__caption,
+  &__item:not(:first-child) {
+    opacity: 0;
+    transform: translateX(50px);
   }
 }
 
