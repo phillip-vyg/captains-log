@@ -1,9 +1,12 @@
 import Lenis from "@studio-freight/lenis";
 
 class SmoothScroll {
-  el!: HTMLElement;
-  content!: HTMLElement;
-  lenis!: Lenis;
+  public el!: HTMLElement;
+  public content!: HTMLElement;
+  public lenis!: Lenis;
+
+  // Static property to store instances
+  static instances: SmoothScroll[] = [];
 
   constructor(screen?: HTMLElement) {
     if (!screen) return;
@@ -23,6 +26,9 @@ class SmoothScroll {
     requestAnimationFrame((t) => this.raf(t));
 
     this.events();
+
+    // Allows us to retreive this in other classes
+    SmoothScroll.instances.push(this);
   }
 
   // Lenis RAF utility

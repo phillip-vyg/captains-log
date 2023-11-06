@@ -17,7 +17,7 @@ class Fullscreen {
 
   constructor() {
     // From global.js, NodeList of all cards
-    this.elements = Array.from(CARDS);
+    this.elements = [...CARDS];
     // Fullscreen elements
     this.container = document.querySelector(".fullscreen");
     this.close = document.querySelector(".fullscreen__close");
