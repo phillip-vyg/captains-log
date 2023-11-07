@@ -1,5 +1,7 @@
 import * as THREE from "three";
 import MeshItem from "./meshItem";
+import gsap from "gsap";
+import { SCREENS } from "./globals";
 
 class GridCanvas {
   container: any;
@@ -86,7 +88,10 @@ class GridCanvas {
   resize() {
     document.querySelectorAll("canvas").forEach((el) => el.remove());
     clearTimeout(this.timeout);
-    this.timeout = setTimeout(() => this.draw(), 100);
+    this.timeout = setTimeout(() => {
+      this.draw();
+      gsap.set(SCREENS, { clearProps: "transform" });
+    }, 100);
   }
 
   draw() {
