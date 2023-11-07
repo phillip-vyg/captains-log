@@ -1,4 +1,4 @@
-import EffectCanvas from "./effectCanvas";
+import GridCanvas from "./gridCanvas";
 
 class GridAnimation {
   el!: HTMLElement;
@@ -12,7 +12,7 @@ class GridAnimation {
     this.grid = this.el.querySelector(".cards");
     this.gridItems = this.grid.querySelectorAll(".card");
 
-    new EffectCanvas(this.el);
+    new GridCanvas(this.el);
   }
 }
 export default GridAnimation;

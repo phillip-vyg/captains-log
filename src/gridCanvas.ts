@@ -1,7 +1,7 @@
 import * as THREE from "three";
-import MeshItem from "./meshItems";
+import MeshItem from "./meshItem";
 
-class EffectCanvas {
+class GridCanvas {
   container: any;
   content: any;
   images: any[];
@@ -9,6 +9,35 @@ class EffectCanvas {
   scene!: THREE.Scene;
   camera!: THREE.PerspectiveCamera;
   renderer!: THREE.WebGL1Renderer;
+  timeout: number;
+
+  private _viewport = {
+    width: 0,
+    height: 0,
+    aspectRatio: 0,
+  };
+
+  // Getter function used to get screen dimensions used for the camera and mesh materials
+  get viewport() {
+    return this._viewport;
+  }
+
+  // Setter function for viewport
+  set viewport({
+    width,
+    height,
+    aspectRatio,
+  }: {
+    width: number;
+    height: number;
+    aspectRatio: number;
+  }) {
+    this._viewport = {
+      width,
+      height,
+      aspectRatio,
+    };
+  }
 
   constructor(el: HTMLElement) {
     this.container = el;
@@ -16,27 +45,12 @@ class EffectCanvas {
     this.images = [...this.container.querySelectorAll("img")];
     // Used to store all meshes we will be creating.
     this.meshItems = [];
-    // initiates Three.js
-    this.setupCamera();
-    this.createMeshItems();
-    this.render();
-  }
 
-  // Getter function used to get screen dimensions used for the camera and mesh materials
-  get viewport() {
-    const width = this.content.offsetWidth;
-    const height = this.content.offsetHeight;
-    const aspectRatio = width / height;
-
-    return {
-      width,
-      height,
-      aspectRatio,
-    };
+    this.draw();
   }
 
   setupCamera() {
-    // window.addEventListener("resize", this.onWindowResize.bind(this), false);
+    window.addEventListener("resize", this.resize.bind(this), false);
 
     // Create new scene
     this.scene = new THREE.Scene();
@@ -69,15 +83,21 @@ class EffectCanvas {
     );
   }
 
-  // onWindowResize() {
-  //   console.log("resizing");
-  //   // readjust the aspect ratio.
-  //   this.camera.aspect = this.viewport.aspectRatio;
-  //   // Used to recalulate projectin dimensions.
-  //   this.camera.updateProjectionMatrix();
-  //   // Update renderer
-  //   this.renderer.setSize(this.viewport.width, this.viewport.height);
-  // }
+  resize() {
+    document.querySelectorAll("canvas").forEach((el) => el.remove());
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => this.draw(), 100);
+  }
+
+  draw() {
+    this.viewport.width = this.content.offsetWidth;
+    this.viewport.height = this.content.offsetHeight;
+    this.viewport.aspectRatio = this.viewport.width / this.viewport.height;
+
+    this.setupCamera();
+    this.createMeshItems();
+    this.render();
+  }
 
   createMeshItems() {
     // Loop thorugh all images and create new MeshItem instances. Push these instances to the meshItems array.
@@ -89,12 +109,10 @@ class EffectCanvas {
 
   // Animate the meshes. Repeatedly called using requestAnimationFrame
   render() {
-    for (let i = 0; i < this.meshItems.length; i++) {
-      this.meshItems[i].render();
-    }
+    for (let i = 0; i < this.meshItems.length; i++) this.meshItems[i].render();
     this.renderer.render(this.scene, this.camera);
     requestAnimationFrame(this.render.bind(this));
   }
 }
 
-export default EffectCanvas;
+export default GridCanvas;
