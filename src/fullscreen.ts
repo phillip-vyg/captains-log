@@ -157,6 +157,7 @@ class Fullscreen {
 
   // Add the gallery content
   insertGalleryItems(data: {
+    author: any;
     images: string | any[];
     title: any;
     description: any;
@@ -175,11 +176,11 @@ class Fullscreen {
     // Inject gallery HTML string into gallery container
     this.gallery!.innerHTML = galleryHTML;
 
-    let captionHTML = ``;
+    let captionHTML = `<div class="sm:pr-4 max-sm:pr-8">`;
 
     // Add the title of the card to the caption
     if (data.title) {
-      captionHTML = `<p class="text-lg mb-2"><strong>${data.title}</strong></p>`;
+      captionHTML += `<p class="text-lg mb-2"><strong>${data.title}</strong></p>`;
     }
 
     // Add the description of the card to the caption
@@ -190,6 +191,16 @@ class Fullscreen {
     // Add the date of the card to the caption
     if (data.timeago) {
       captionHTML += `<time class=" block mt-2 text-xs italic">${data.timeago}</time>`;
+    }
+
+    captionHTML += `</div>`;
+
+    // Add the date of the card to the caption
+    if (data.author && data.author.avatar) {
+      captionHTML += `<figure class="relative flex-shrink-0 tooltip--hover">`;
+      captionHTML += `<img src="${data.author.avatar}" alt="${data.author.name}" class="w-50 h-50 rounded-full" />`;
+      captionHTML += `<span class="tooltip">${data.author.name}</span>`;
+      captionHTML += `</figure>`;
     }
 
     // Inject caption HTML string into caption container

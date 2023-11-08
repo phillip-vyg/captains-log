@@ -139,7 +139,7 @@ class MeshItem {
     // this function is repeatidly called for each instance in the aboce
     this.getDimensions();
     this.mesh.position.set(this.offset.x, this.offset.y, 0);
-    this.mesh.scale.set(this.sizes.x, this.sizes.y, 1);
+    // this.mesh.scale.set(this.sizes.x, this.sizes.y, 1);
     this.uniforms.uOffset.value.set(
       this.offset.x * 0.0,
       -(

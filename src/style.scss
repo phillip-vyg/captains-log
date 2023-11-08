@@ -190,3 +190,44 @@ canvas {
   left: 0;
   pointer-events: none;
 }
+
+.tooltip {
+  display: block;
+  border-radius: 4px;
+  padding: 0.35rem 1rem;
+  background-color: theme("colors.mine-shaft.80");
+
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: small;
+  color: theme("colors.white");
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms ease-out;
+
+  &:after {
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 4px solid theme("colors.mine-shaft.80");
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &--hover:hover {
+    .tooltip {
+      opacity: 1;
+    }
+  }
+}
